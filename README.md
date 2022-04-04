@@ -14,7 +14,7 @@ WORKING CLOCK > 14 HOURS -> Status V
 
 Clock Reset will be issued if:
 
-Concutive OFF Event sum is greater than or equal 10 hours.
+Consecutive OFF Event sum is greater than 10 hours.
 OFF(t,n-1) + OFF(t,n) > 10 -> Status OK,
 DRIVING CLOCK = 0, WORKING CLOCK = 0.
 
