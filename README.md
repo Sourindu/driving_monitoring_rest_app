@@ -5,17 +5,20 @@ This is a python/flask based application running on docker container. This appli
 The business logic for the application is as follows:
 
 D + W + OFF (HOURS) = WORKING CLOCK
-D = DRIVING CLOCK
+
+D (HOURS) = DRIVING CLOCK
 
 Violation STATUS will be issued if:
 
-DRIVING CLOCK > 11 HOURS -> Status V
-WORKING CLOCK > 14 HOURS -> Status V
+DRIVING CLOCK > 11 HOURS --> Status: V
+WORKING CLOCK > 14 HOURS --> Status: V
 
 Clock Reset will be issued if:
 
 Consecutive OFF Event sum is greater than 10 hours.
-OFF(t,n-1) + OFF(t,n) > 10 -> Status OK,
+
+OFF(t,k) + OFF(t,n) > 10 HOURS --> Status: OK (k is all previous entries for OFF time, n is the current OFF entry)
+
 DRIVING CLOCK = 0, WORKING CLOCK = 0.
 
 
