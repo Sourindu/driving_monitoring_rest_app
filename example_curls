@@ -1,0 +1,46 @@
+# Storing Events in Redis
+
+curl --request POST 'localhost:5000/event' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+{
+    "event": "D",
+    "value": 1
+},
+{
+    "event": "W",
+    "value": 2
+},
+{
+    "event": "OFF",
+    "value": 3
+}
+]'
+
+curl --request POST 'localhost:5000/event' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+
+{
+    "event": "OFF",
+    "value": 11
+}
+]'
+
+curl --request POST 'localhost:5000/event' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+
+{
+    "event": "D",
+    "value": 1
+},
+{
+    "event": "W",
+    "value": 1
+}
+]'
+
+# Fetching data
+
+curl 'http://localhost:5000/event'
