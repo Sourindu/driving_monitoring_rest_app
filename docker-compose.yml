@@ -7,7 +7,7 @@ services:
   web:
     build: .
     tty: true
-    env_file: .env
+    env_file: ENV.env
     entrypoint: ["/opt/entrypoint.sh"]
     ports:
       - "5000:5000"
